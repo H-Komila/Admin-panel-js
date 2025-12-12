@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+   <div class="nimadir">
+    <div class="container">
+     <div id="loader" class="loader"></div>
+
+    <div class="hero">
+        <div id="card" class="cards" data-aos="fade-up"
+     data-aos-duration="2000">
+
+        </div>
+    </div>
+   </div>
+   </div>
+
+<script>
+    let card = document.getElementById("card");
+let loader = document.getElementById("loader");
+
+function api() {
+    loader.style.display = "block";
+
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(list => {
+                card.innerHTML += `
+                  <div class="box">
+                     <i class="id">${list.id}</i>
+                     <h1 class="name">${list.name}</h1>
+                     <h1 class="username">${list.username}</h1>
+                     <a class="email" href="mailto:${list.email}">${list.email}</a>
+                     
+                     <div class="address">
+                         <p class="street">${list.address.street}</p>
+                         <p class="suite"> ${list.address.suite}</p>
+                         <p class="city"> ${list.address.city}</p>
+                         <p class="zipcode"> ${list.address.zipcode}</p>
+                         <p class="lat"> ${list.address.geo.lat},  ${list.address.geo.lng}</p>
+                     </div>
+
+                     <div class="company">
+                         <p class="company"> ${list.company.name}</p>
+                         <p class="catchPhrase"> ${list.company.catchPhrase}</p>
+                     </div>
+                  </div>
+                `;
+            });
+        })
+        .catch(err => console.error(err))
+        .finally(() => {
+            loader.style.display = "none";
+        });
+}
+
+api();
+</script>
+
+
+<script src="./js/main.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
+</body>
+</html>

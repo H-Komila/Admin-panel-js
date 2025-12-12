@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -29,14 +30,14 @@
                             <span>S</span>
                         </h1>
                     </span>
-                    <ul class="sidebar__list">
+                    <ul class="sidebar__list"data-aos="zoom-out-right"data-aos-duration="2000">
                         <li class="sidebar__item"><a class="sidebar__link" href="index.html"> <i
                                     class="fa-solid fa-house"></i>Home</a></li>
                         <li class="sidebar__item"><a class="sidebar__link" href="media.html"> <i
                                     class="fa-regular fa-image"></i>Media</a></li>
-                        <li class="sidebar__item"><a class="sidebar__link" href="#"> <i
+                        <li class="sidebar__item"><a class="sidebar__link" href="orders.html"> <i
                                     class="fa-solid fa-cart-shopping"></i>Orders</a></li>
-                        <li class="sidebar__item"><a class="sidebar__link" href="#"> <i
+                        <li class="sidebar__item"><a class="sidebar__link" href="delivery.html"> <i
                                     class="fa-solid fa-motorcycle"></i>Delivery Boys</a></li>
                         <li class="sidebar__item"><a class="sidebar__link" href="#"> <i
                                     class="fa-regular fa-user"></i>Customers</a></li>
@@ -65,7 +66,7 @@
             <div class="container">
                 <div class="header__container">
                     <ul class="header__list">
-                        <li class="header__item">
+                        <li class="header__item" data-aos="zoom-in-right"data-aos-duration="2000">
                             <h1 class="header__title">Have you triend our cranberry <br> line yet?</h1>
                             <i class="fa-solid fa-utensils icon"></i>
                             <i class="fa-solid fa-burger icon"></i>
@@ -78,7 +79,7 @@
                                 <button class="header__btn">Product Composition</button>
                                 <button class="header__btn1">For partners</button>
                         </li>
-                        <li class="item">
+                        <li class="item" data-aos="zoom-in-left" data-aos-duration="2000">
                             <img class="header__img" src="./images/3.jpg" alt="">
                         </li>
                     </ul>
@@ -87,29 +88,12 @@
         </header>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
     <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
 </body>
 
 </html>
